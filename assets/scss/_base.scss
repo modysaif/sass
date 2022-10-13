@@ -1,0 +1,116 @@
+@import 'colors';
+
+@import 'variable';
+
+
+@mixin container {
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+@mixin responsive-Container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@mixin space-between {
+    
+}
+
+@mixin btn($backgroundColor , $color ) {
+    border: none;
+    background-color:$backgroundColor;
+    padding: 12px 35px;
+    font-size: 17px;
+    border-radius: $border-radius-1;
+    color:$color;
+    font-weight: $font-weight;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+// @mixin btn-1 {
+//     border: none;
+//     background-color: $primary-color;
+//     padding: 12px 35px;
+//     font-size: 17px;
+//     border-radius: $border-radius-1;
+//     color: $bg-color;
+//     font-weight: $font-weight;
+//     text-transform: capitalize;
+//     cursor: pointer;
+//     margin-top: 15px;
+// }
+
+@mixin nav-icon {
+    color: $bg-color;
+    font-size: 21px;
+}
+
+@mixin primary-des() {
+ color: $primary-color;
+  font-size: $font-size-des-1;
+  font-weight: $font-weight;  
+  line-height:$line-height;
+  letter-spacing: $letter-spacing;
+
+}
+
+@mixin secondary-des {
+    font-size: $font-size-des-3;
+    line-height: $line-height;
+    color: $font-color;
+}
+
+@mixin basic-des($bottom  , $font-size) {
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $heading-color;
+    margin-bottom: $bottom;
+}
+
+
+@mixin info {
+    font-size: 20px;
+    line-height: $line-height;
+    color:$heading-color;
+}
+
+
+@mixin flex() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin header($color , $font) {
+    font-weight: $font-weight; 
+    font-size: $font;
+    color: $color;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+@mixin hover-1() {
+    background-color: $primary-color;
+    // color: $chose;
+    color: $bg-color;
+    transition: 0.5s all;
+}
+
+@mixin hover-2 {
+    color: $primary-color;
+}
+
+$breakpoints: (
+  'small':  414px,
+  'medium': 912px,
+  'large':  1280px,
+);
+
+@mixin breakpoint($size) {
+
+    @media (max-width: map-get($breakpoints ,$size )) {
+       @content 
+    }
+}

@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+@import "colors";
+@import "base";
+@import "variable";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.space{
+    margin-top: 8%;
+}
+
+
+.home {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url(../images/banner2.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  @include breakpoint(small) {
+    width: 110%;
+    height: 50vh;
+  }
+  .parent-heading {
+    padding-top: 15%;
+    width: 100%;
+    @include breakpoint(small) {
+      padding-top: 30%;
+    }
+    .heading-des{
+      color: $bg-color;
+      font-size: 65px;
+      @include breakpoint(small) {
+        font-size: 30px;
+      }
+    }
+  }
+
+  
+  
+}
+
+.container {
+  @include container;
+  @include breakpoint(small){
+    @include responsive-Container;
+  }
+}
+.nav {
+  @include flex;
+  padding-top: 3%;
+  .nav-logo {
+    @include flex;
+    h1 {
+      color: $bg-color;
+      font-size: 35px;
+      span {
+        color: $primary-color;
+      }
+    }
+  }
+  .nav-list {
+    @include breakpoint(small){
+       display: none
+      }
+    ul {
+      @include flex;
+
+      li {
+        list-style: none;
+        a {
+          padding: 0px 15px;
+          text-decoration: none;
+          color: $bg-color;
+          font-weight: $font-weight;
+          font-size: 19px;
+        }
+        & i {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.nav-right {
+  & i {
+    color: $bg-color;
+    font-size: 22px;
+    padding: 0px 15px;
+  }
+  .btn {
+    @include btn($bg-color , black);
+  
+    &:hover {
+      @include hover-1;
+    }
+  }
+}
+
+
+
+.home-content {
+width: 80%;
+}
+  
+
+ 
+
+
+.btn{
+  @include btn($primary-color , $bg-color)
+}
+
+
+.heading-title {
+  @include primary-des;
+}
+
+
+.info-img img{
+    width: 80%;
+    border-radius: $border-radius-1;
+}
+
+.parent-heading{
+  width: 50%;
+  @include breakpoint(small){
+    width: 100%;
+    }
+}
+
+
+.heading-des{
+  @include header(black , 40px);
+  @include breakpoint(small){
+    @include header(black , 30px)
+    }
+}
+
+
+    
+   
+
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(2,550px);
+    align-items: center;
+    @include breakpoint(small){
+        grid-template-columns: repeat(1,420px);
+        }
+
+
+}
+
+
+
+.right-col{
+display: grid;
+grid-template-columns: repeat(2 , 580px);
+justify-content: space-between;
+@include breakpoint(small){
+  grid-template-columns: repeat(1 , 420px);
+}
+}
+
+.right-col-1{
+display: grid;
+grid-template-columns: repeat(2 , 320px);
+@include breakpoint(small){
+  grid-template-columns: repeat(1 , 420px);
+
+}
+}
+
+.box{
+  background-color: rgb(235, 235, 235);
+  margin: 10px;
+  border-radius: $border-radius-1;
+  padding: 25px;
+  cursor: pointer;
+  &:hover{
+    @include hover-1;
+  }
+  &:hover i {
+    @include hover-1;
+  }
+  &:hover .info-des {
+    color: $bg-color;
+  }
+  @include breakpoint(small){
+    margin:10px 0px;
+  }
+}
+
+.box-icon i {
+color: $primary-color;
+font-size: 25px;
+}
+
+.box-heading{
+  margin-top: 20px;
+  .info-des{
+    padding-top: 10px;
+  }
+}
+.right-col img{
+    width: 80%;
+    border-radius: $border-radius-1;
+    @include breakpoint(small) {
+      width: 98%;
+      margin-bottom: 15px
+    }
+}
+
+.info-title{
+    @include basic-des(15px , 18px); 
+
+}
+
+.info-des{
+    @include secondary-des; 
+     margin-bottom: 15px;
+}
+
+.item{
+  margin: 30px 0px;
+}
+.box-icon{
+  display: flex;
+ align-items: center;
+ gap: 10px;
+  .info-title{
+    @include basic-des(0px , 22px);
+  }
+}
+
+.col{
+  width: 80%;
+}
+
+.row-2{
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-row-gap: 50px;
+  @include breakpoint(small) {
+    grid-template-columns: repeat(1,410px);
+  }
+}
+
+.col-2{
+  position: relative;
+}
+
+.col-2-info{
+ .heading-title{
+    font-size: 20px;
+ }
+}
+.col-2-info{
+  position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    height: 20%;
+    top: 66%;
+    left: 50px;
+    padding: 10px;
+    border-radius: $border-radius-1; 
+}
+.col-2-item img{
+  width: 90%;
+  height: 65vh;
+  border-radius: $border-radius-1;
+  @include breakpoint(small) {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+.col-2-item:hover img{
+  transform: scale(1.1);
+  transition: 0.2s all ease-in-out;
+}
+
+
+.section-item img{
+  width: 100%;
+  border-radius: $border-radius-1;
+}
+
+
+.section-6{
+  .row{
+    grid-column-gap: 50px;
+    @include breakpoint(small){
+      grid-row-gap:50px;
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+  .info-title{
+    @include basic-des(18px , 22px);
+  }
+
+
+}
+
+.row-3{
+  display: grid;
+  grid-template-columns: repeat(3,400px);
+  margin-top: 60px;
+  width: 100%;
+  @include breakpoint(small){
+    grid-template-columns: repeat(1,400px); 
+  }
+  input{
+    border: 1px solid silver;
+   width: 50%;
+   padding: 0px 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+    height: 6vh;
+    @include breakpoint(small){
+      width: 60%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .btn{
+    @include btn($primary-color , $bg-color);
+      padding: 10px 33px;
+      @include breakpoint(small){
+        padding: 10px 35px;
+      }
+  }
+}
+
+.section-7{
+ background-color:$footer-bg;
+ height: 85vh;
+ padding-top: 5%;
+ @include breakpoint(small){
+  width: 110%;
+  height: 110vh;
+ }
+  .row-4{
+    display: grid;
+    grid-template-columns: repeat(3,400px);
+   @include breakpoint(small){
+    grid-template-columns: repeat(1,400px);
+ }
+    .nav-logo {
+      h1 {
+        color: $bg-color;
+        font-size: 35px;
+        span {
+          color: $primary-color;
+        }
+      }
+    }
+    .footer-icon{
+
+      i{
+        font-size: 18px;
+        border-radius: 40px;
+        border: 1px solid silver;
+        color: silver;
+        padding: 10px;
+      }
+    }
+  }
+.info-title{
+  color: $bg-color;
+}
+
+.footer-des{
+  text-align: center;
+  margin-top: 6%;
+  a{
+    @include primary-des;
+    text-decoration: none;
+  }
+}
+}
